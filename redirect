@@ -1,0 +1,18 @@
+#!/bin/sh
+
+path=$1
+echo ${path}
+
+mkdir -p ${path}
+rm    ${path}index.html
+touch ${path}index.html
+echo '<!doctype html>'                                                              >> ${path}index.html
+echo '<html lang="ja">'                                                             >> ${path}index.html
+echo '  <head>'                                                                     >> ${path}index.html
+echo '    <link rel="canonical" href="https://kyoh86.dev/'${path}'">'               >> ${path}index.html
+echo '    <meta http-equiv="refresh" content="0;URL=https://kyoh86.dev/'${path}'">' >> ${path}index.html
+echo '  </head>'                                                                    >> ${path}index.html
+echo '  <body>'                                                                     >> ${path}index.html
+echo '    <p>This page is moved to https://kyoh86.dev/'${path}'</p>'                >> ${path}index.html
+echo '  </body>'                                                                    >> ${path}index.html
+echo '</html>'                                                                      >> ${path}index.html
